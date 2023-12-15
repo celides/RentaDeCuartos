@@ -1,0 +1,1027 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 90px 0;
+}
+
+.header {
+    height: 100vh;
+    background-image: url(./img/Los_Arcos_de_Queretaro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+.head {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+
+
+/* Estilos específicos para el modo oscuro _________________________________________*/
+
+ body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+
+.menu-navegacion {
+    display: flex;
+    justify-content: space-around;
+    background-color: #006ec3;
+    /* Cambia "green" al color de verde que prefieras */
+}
+
+.dark-mode-button {
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilos específicos para el modo oscuro _________________________________________*/
+
+/* MENU hamburguer_________________________________________________________________ */
+.menu-navegacion {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50px;
+    left: -200px; /* Ajusta el valor según tus necesidades */
+    width: 200px;
+    height: 50%;
+    background-color: transparent;
+    transition: right 0.3s ease;
+    z-index: 1000; /* Añade un valor alto para asegurar que esté por encima de otros elementos */
+}
+
+.menu-navegacion a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s ease; /* Añade una transición para suavizar el cambio de color al pasar el ratón */
+}
+
+.menu-navegacion a:hover {
+    background-color: #ffcc00; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.menu-navegacion a:last-child {
+    border-bottom: none;
+}
+
+.menu-navegacion.active {
+    left: 0;
+}
+
+.hamburguer {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px; /* Ancho del ícono */
+    height: 50px; /* Altura del ícono */
+    background-color:  rgba(255, 204, 0, 0.822);
+    border:#006ec3;
+    border: 2px solid #006ec3; /* Cambié 'border' a 'border: 2px solid' para tener un borde visible */
+    border-radius: 10px; /* Ajusta el valor según el grado de redondeo que desees */
+    padding: 0;
+}
+.hamburguer.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburguer.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguer.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.hamburguer span {
+    display: block;
+    width: 100%;
+    height: 4px; /* Grosor de las líneas del ícono */
+    background-color: #ffcc00; /* Color amarillo */
+    transition: 0.3s; /* Agrega una transición suave al color */
+    
+}
+/* MENU hamburguer_________________________________________________________________ */
+
+/* Boton Inicio_________________________________________________________________ */
+
+.boton-inicio {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #006ec3; /* Cambia al color que desees */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.boton-inicio:hover {
+    background-color: #ffcc00; /* Cambia al color amarillo que desees */
+    color: #000; /* Cambia al color negro que desees */
+}
+
+/* Boton Inicio_________________________________________________________________ */
+/* Boton Inicio JavaScript _________________________________________________________________ */
+
+
+/* Estilos para pantallas más pequeñas (responsive)_______________________________________________ */
+@media (max-width: 768px) {
+    .menu-navegacion {
+        width: 100%;
+        /* Ocupará el 100% del ancho de la pantalla */
+        transform: translateX(0);
+        /* Mostrará el menú en pantallas más pequeñas */
+        background: rgba(0, 0, 0, 0.8);
+        /* Fondo semitransparente */
+        padding: 20px 0;
+        /* Añade espacio en la parte superior e inferior del menú */
+        flex-direction: column;
+        /* Cambia la dirección de los elementos a vertical */
+        align-items: center;
+        /* Centra los elementos verticalmente */
+    }
+
+    .menu-navegacion.active {
+        transform: translateY(0);
+    }
+
+    
+.menu-navegacion {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Ajusta la posición según tus necesidades */
+    left: -100%; /* Oculta el menú al principio */
+    width: 100%;
+    background-color: #006ec3;
+    transition: left 0.3s ease;
+}
+
+.menu-navegacion a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #fff; /* Línea separadora entre elementos del menú */
+}
+
+.menu-navegacion a:last-child {
+    border-bottom: none; /* Elimina la línea separadora del último elemento del menú */
+}
+
+.menu-navegacion.active {
+    left: 0; /* Muestra el menú cuando está activo */
+}
+
+
+
+    .menu-button {
+        padding: 10px 20px;
+        /* Redefine el espaciado de los botones para pantallas más pequeñas */
+        margin: 10px 0;
+        /* Añade espacio entre los botones */
+    }
+
+    .menu-navegacion.active {
+        transform: translateX(0);
+        /* Muestra el menú cuando se activa (por ejemplo, con un botón de hamburguesa) */
+    }
+
+    .hamburguer {
+        display: block;
+        /* Muestra el botón de hamburguesa en pantallas más pequeñas */
+    }
+}
+
+/* .barra-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 2;
+  
+} */
+
+.menu-button {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #006ec3;
+    color: #000000;
+}
+
+/* hamburguer blanco___________________________________________________________ */
+
+/* Circulo perfil y sol_____________________________________________________________________________________________________ */
+
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border: 5px solid #006ec3;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.elemento-en-la-esquina {
+    height: 300px;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    line-height: 70px;
+}
+
+/* bicel del circulo____________________________________________________________________ */
+
+.profile {
+    width: 100%;
+    max-width: 350px; /* Ajusta el ancho máximo según tus necesidades */
+    height: auto; /* Ajusta la altura automáticamente */
+    overflow: hidden;
+    border: transparent;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+
+/* Circulo perfil y sol_____________________________________________________________________________________________________ */
+
+
+
+/* Renta de Cuartos Habitaciones y Lofts en Querétaro_____________________________________________________________________________________________________ */
+
+
+
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+    .elemento-en-la-esquina {
+        height: auto;
+        line-height: normal;
+        margin-bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+    }
+}
+
+    .elemento-en-la-esquina {
+        min-width: 70px;
+        min-height: 5%;
+        height: auto;
+        line-height: normal;
+    }
+
+/* Estilos para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Puedes agregar estilos específicos si es necesario */
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1024px) {
+    /* Puedes agregar estilos específicos si es necesario */
+}
+
+
+/* Renta de Cuartos Habitaciones y Lofts en Querétaro____________________________________________________________________ */
+
+
+
+
+
+
+
+/* Estilos base para el contenedor */
+.contenedor {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.head {
+    text-align: center;
+}
+
+.titulo {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Media query para pantallas más pequeñas (por ejemplo, dispositivos móviles) */
+@media (max-width: 767px) {
+    .titulo {
+        font-size: .5em;
+    }
+}
+
+/* Media query para pantallas medianas (por ejemplo, tabletas) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .titulo {
+        font-size: .8em;
+    }
+}
+
+/* Media query para pantallas grandes (por ejemplo, computadoras de escritorio) */
+@media (min-width: 1024px) {
+    .titulo {
+        font-size: .5em;
+    }
+}
+
+/* Texto Renta de Cuartos Habitaciones y Lofts en Querétaro____________________________________________________________________ */
+
+/* Circulo perfil _____________________________________________________________________________________________________ */
+
+/* Circulo perfil _____________________________________________________________________________________________________ */
+
+
+
+/* menu barra arriva _____________________________________________________________________________________________________ */
+
+/* .menu-navegacion a:hover {
+    font-size: 1.1em;
+   
+    color: #006ec3;   /* color texto 
+ 
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.menu-navegacion {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 30vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    right: 0;
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+
+} */
+
+/* menu barra arriva _________________________________________________________________________________ */
+
+/* parece modo obscuro ?????????_____________________________________________________________________________________ */
+
+.switch-label {
+    position: relative;
+    top: 20px;
+    /* Ajusta la posición vertical según sea necesario */
+    right: 90px;
+    /* Ajusta la posición horizontal según sea necesario */
+    left: 28px;
+}
+
+/* Estilos para el botón de conmutación (Toggle Switch) fuera del menú */
+.switch {
+    position: relative;
+    /* Fijo para que permanezca en su lugar */
+    top: 30px;
+    /* Ajusta la posición vertical según sea necesario */
+    right: 90px;
+    /* Ajusta la posición horizontal según sea necesario */
+    left: 28px;
+}
+
+/* Otros estilos de tu botón y menú... */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+/* parece modo obscuro ?????????  Termina boton modo obscuro ______________________________________________ */
+
+
+/* texto h1 y p */
+.contenedor head con-fondo elemento-en-la-esquina {
+    justify-content: flex-start;
+
+}
+
+.titulo {
+    display: inline-block;
+    font-size: 104px;
+    transition: color 0.3s;
+    /* Transición suave para el color del texto */
+    text-align: right;
+    /* Permite el posicionamiento relativo */
+    color: #ffffff;
+
+}
+
+.titulo:hover {
+    color: #ffcc00;
+    /* Cambia el color del título a negro al pasar el cursor */
+
+}
+
+.copy {
+    display: inline-block;
+    font-size: 88px;
+    text-align: right;
+    /* Permite el posicionamiento relativo */
+    color: #00fff6;
+    /* Color azul fluorescente */
+    transition: font-size 0.3s, color 0.3s;
+}
+
+
+.titulo {
+    display: inline-block;
+    font-size: 24px;
+    transition: color 0.3s;
+    /* Transición suave para el color del texto */
+}
+
+/* cambio de color hober del titulo Renta de cuartos... */
+
+.titulo:hover {
+    color: #fdf500;
+    /* Cambia el color al pasar el cursor */
+}
+
+.con-fondo {
+
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    /* Color del texto en el fondo */
+    /* Otros estilos para la sección con fondo... */
+}
+
+
+    /* .hamburguesa-menu {
+        display: block;
+        /* Mostrar el menú hamburguesa en pantallas más pequeñas 
+        cursor: pointer;
+    } */
+
+    /* .barra {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    } */
+
+/* Más estilos y estilos anteriores para pantallas más grandes */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #006ec3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* ____________________________________________________________________________________________________________________ */
+/* Estilos para el interlineado y justificación */
+
+.contenedor-servicio p {
+    line-height: 1.5; /* Ajusta el valor según tu preferencia para el interlineado */
+    text-align: justify; /* Esto justificará el texto */
+    
+  }
+  
+  
+/* ___________________________________________________________________________________________________________________ */
+
+.spread {
+    transform: translateX(0);
+}
+
+.menu-navegacion a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.titulo {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.copy {
+    font-weight: 300;
+    font-size: 25px;
+}
+
+/* Services________________________________________________________ */
+
+
+.subtitulo {
+    color: #006ec3;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.contenedor-servicio {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-servicio img {
+    width: 40%;
+}
+
+.checklist-servicio {
+    width: 45%;
+}
+
+.service {
+    margin-bottom: 20px;
+}
+
+.n-service {
+    margin-bottom: 7px;
+    color: #9f8ad0;
+}
+
+
+.number {
+    display: inline-block;
+    /* 02 */
+    background-image: linear-gradient(to top, #006ec3 0%, #fbc2eb 100%);
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.gallery {
+    background: #ffffff;
+}
+/* _______________________________________________________________________________________ */
+
+.contenedor-galeria {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    
+  }
+  
+  .imagen-link {
+    flex: 0 0 calc(30% - 20px);
+    /* text-align: center; Centra el texto horizontalmente */
+    margin: 10px;
+    /* Agrega margen superior según tus preferencias */
+    margin-top: 5px; 
+    display: flex; /* Usamos flexbox para centrar las imágenes */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centra verticalmente el contenido */
+    flex-direction: column; /* Coloca el contenido en columna (imagen arriba, texto abajo) */
+   
+    text-decoration: none;
+  }
+  
+  .img-galeria {
+    width: 80%;
+    height: auto; /* Añade esta línea para mantener la proporción de la imagen */
+    display: block;
+    margin: auto; /* Esto centrará la imagen horizontalmente y verticalmente */
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform-origin: center center;
+    object-fit: contain;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    cursor: pointer; /* Puedes activar esto si es necesario */
+  }
+  
+  .imagen-nombre:hover {
+    transform: scale(1.2);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); se quito porque se ve el cuadro */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+/* disponibilidad ______________________________________________________________________________________ */
+
+
+  .disponibilidad-disponible {
+    color: green;
+  }
+  
+  .disponibilidad-no-disponible {
+    color: red;
+  }
+  
+
+/* imanes Galeria ______________________________________________________________________________________ */
+
+.imagen-nombre {
+    text-align:center; /* Centra el texto horizontalmente */
+    /* Agrega margen superior del texto de la imagen */
+    margin-top: 15px; 
+    margin-bottom:15px;
+    font-weight: bold; /* Opcional: establece el peso de la fuente en negrita */
+    font-size: 26px; /* Opcional: ajusta el tamaño de fuente según tus preferencias */
+    display: block; /* Hace que el elemento sea un bloque para que esté debajo de la imagen */
+  }
+
+  /* Panorama ______________________________________________________________________________________ */
+
+  #panorama0 {
+    width: 100%;
+    height: 400px;  /* Ajusta la altura según tus preferencias */
+  }
+
+  #panorama1 {
+    width: 100%;
+    height: 400px;  /* Ajusta la altura según tus preferencias */
+  }
+  #panorama2 {
+    width: 100%;
+    height: 400px;  /* Ajusta la altura según tus preferencias */
+  }
+  panorama2 
+
+/* texto de las imagenes da click aqui ______________________________________________________________________________________ */
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.experts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cont-expert {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cont-expert img {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.n-expert {
+    width: 100%;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+/* Footer_______________________________________________________________________________________ */
+
+/* footer {
+    background: #006ec3;
+    padding-bottom: 0.1px;
+} */
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+   
+    padding-bottom: 20px;
+}
+
+.contact-us {
+    width: 40%;
+    color: #fff;
+}
+
+.brand {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.brand+p {
+    font-weight: 500;
+}
+
+/* .social-media {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+} */
+
+/* Puedes ajustar el tamaño según sea necesario */
+.whatsapp-icon {
+    width: 20px; /* Tamaño en píxeles */
+    height: auto; /* Autoajustar la altura proporcionalmente */
+    margin-right: 10px; /* Ajusta el margen derecho según tu diseño */
+}
+
+
+.social-media-icon {
+    display: inline-block;
+    margin-right: 20px;;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+}
+
+.social-media-icon i {
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.line {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 60px;
+}
+
+.social-media-icon:hover {
+    background: #fff;
+    color: #006ec3;
+}
+
+@media screen and (max-width: 800px) {
+    .menu-navegacion {
+        width: 50vw;
+    }
+
+    .titulo {
+        font-size: 40px;
+    }
+
+    .contenedor-servicio img {
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+    .checklist-servicio {
+        width: 80%;
+    }
+
+    .service {
+        margin-bottom: 30px;
+    }
+
+    .img-galeria {
+        width: 45%;
+    }
+
+    .agregarImagen {
+        width: 80%;
+    }
+
+    .cont-expert {
+        width: 80%;
+    }
+
+    /* .footer-content {
+        justify-content: center;
+    } */
+
+    .social-media {
+        width: 80%;
+        justify-content: space-evenly;
+    }
+
+    .social-media-icon {
+        margin-left: 0;
+    }
+
+    .contact-us {
+        text-align: center;
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .menu-navegacion {
+        width: 65vw;
+    }
+
+    .hamburguer {
+        top: 20px;
+        right: 20px;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .subtitulo {
+        font-size: 30px;
+    }
+
+    .img-galeria {
+        width: 95%;
+    }
+
+    .agregar-imagen {
+        width: 90%;
+    }
+
+    .social-media {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .social-media-icon {
+        margin-left: 0;
+    }
+
+    .contact-us {
+        text-align: center;
+        width: 95%;
+        margin-bottom: 40px;
+    }
+
+}
+/* iman de */
+.brand-image {
+    max-width: 100%; /* Esto ajustará el ancho máximo de la imagen al ancho del contenedor */
+    height: auto; /* Esto mantendrá la proporción de aspecto original de la imagen */
+}
+
+/* 2footer_________________________________________________________________________ */
+
+/* Estilos para el footer */
+#footer {
+    background-color: #006ec3;
+    color: #ffffff;
+   
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+} */
+
+.contact-us,
+.social-media,
+.footer-item {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los enlaces */
+.link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la línea divisoria */
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 20px 0;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media only screen and (min-width: 768px) {
+    .contact-us,
+    .social-media,
+    .footer-item {
+        flex-basis: calc(33.3333% - 20px);
+        margin: 0 10px;
+    }
+}
+
+#footerb {
+    /* Ajusta el estilo del footer según tus necesidades */
+   
+    bottom: 0;
+    left: 0;
+    width: 100%;
+ 
+    color: #fff; /* Cambia el color del texto según tu diseño */
+}
+
+.copyright {
+    text-align: center;
+    padding: 10px;
+}

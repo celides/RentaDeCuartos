@@ -1,0 +1,32 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburguer = document.querySelector('.hamburguer');
+    const menu = document.querySelector('.menu-navegacion');
+    const botonInicio = document.querySelector('.boton-inicio');
+
+    hamburguer.addEventListener('mouseenter', () => {
+        menu.classList.add('active');
+    });
+
+    hamburguer.addEventListener('mouseleave', () => {
+        if (!menu.matches(':hover')) {
+            menu.classList.remove('active');
+        }
+    });
+
+    hamburguer.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
+
+    menu.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    botonInicio.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});

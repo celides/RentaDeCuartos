@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Latest compiled and minified standalone viewer -->
+<!-- https://cdn.pannellum.org/2.5/pannellum.htm -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renta de cuartos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="./img/RentHabitadLoft.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-TBOlUGOGqTXXUE4G3lDOjQOrF5H4ACfdzFZ5l5XizPZMlf7hPmBU7RdApgE5Nb" , crossorigin="anonymous">
+</head>
+
+<style>
+
+</style>
+
+<!-- MENU hamburguer_________________________________________________________________ -->
+
+<body>
+
+    <header class="header" id="inicio">
+        <img class="hamburguer" src="img/hamburguesa.svg" alt="hamburguer">
+        <nav class="menu-navegacion">
+            <a href="#inicio" class="menu-button">Bienvenidos</a>
+            <a href="#servicio" class="menu-button">Real 100 Calesa</a>
+            <a href="#galeria" class="menu-button">Habitaciones</a>
+            <a href="#expertos" class="menu-button">Areas Comunes y de calle</a>
+            <a href="#footer" class="menu-button">Contactanos</a>
+        </nav>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const hamburguer = document.querySelector('.hamburguer');
+                const menu = document.querySelector('.menu-navegacion');
+
+                hamburguer.addEventListener('mouseenter', () => {
+                    menu.classList.add('active');
+                });
+
+                // Cierra el menú si se hace clic fuera de él
+                window.addEventListener('click', (e) => {
+                    if (menu.classList.contains('active') && e.target !== menu && e.target !== hamburguer) {
+                        menu.classList.remove('active');
+                    }
+                });
+
+                // Evita que el menú se cierre al salir del icono de hamburguesa hacia el menú
+                menu.addEventListener('mouseleave', () => {
+                    if (!hamburguer.matches(':hover')) {
+                        menu.classList.remove('active');
+                    }
+                });
+            });
+        </script>
+
+        <!-- MENU hamburguer_________________________________________________________________ -->
+
+        <!--boton de inicio __________________________________________________________________________________________________________________ -->
+
+        <button class="boton-inicio">
+            <i class="fas fa-home"></i> <!-- Puedes cambiar esto por el icono que deCees -->
+            Inicio
+        </button>
+        <!--boton de inicio JAVASCRIPT______________________________________________________________________________ -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const hamburguer = document.querySelector('.hamburguer');
+                const menu = document.querySelector('.menu-navegacion');
+                const botonInicio = document.querySelector('.boton-inicio');
+
+                hamburguer.addEventListener('mouseenter', () => {
+                    menu.classList.add('active');
+                });
+
+                hamburguer.addEventListener('mouseleave', () => {
+                    if (!menu.matches(':hover')) {
+                        menu.classList.remove('active');
+                    }
+                });
+
+                hamburguer.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    menu.classList.toggle('active');
+                });
+
+                document.addEventListener('click', () => {
+                    menu.classList.remove('active');
+                });
+
+                menu.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+
+                botonInicio.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+        </script>
+
+        <!--boton de inicio JAVASCRIPT__________________________________________________________________________________________________________________ -->
+
+        <body>
+            <div class="profile">
+                <img src="./img/RentHabitadLoft.png" alt="Tu Fotografía de Perfil">
+            </div>
+        </body>
+
+        <!-- Imagen de los arcos____________________________________________________________________________ -->
+
+        <header>
+            <div class="contenedor head con-fondo elemento-en-la-esquina">
+                <h1 class="titulo">Renta de Cuartos Habitaciones y Lofts en Querétaro</h1>
+
+            </div>
+            </section>
+        </header>
+        <!-- Imagen de los arcos__________________________________________________________________________ -->
+
+        <!-- Real 100 Calesa___________________________________________________________________________ -->
+        <main>
+
+            <section class="services contenedor" id="servicio">
+                <section class="services">
+
+                    <h2 class="subtitulo">Real 100 Calesa</h2>
+                    <p>
+                    <h1><strong>¡Sumérgete en la Magia de Querétaro en tus Vacaciones Decembrinas en Real 100 Calesa!
+                            <br> Renta
+                            tu Habitación Amueblada</strong> </h1><br>
+
+                    <p>Descubre el encanto de la Colonia Calesa, en Avenida Real #100, a solo una cuadra de Bernardo
+                        Quintana y
+                        Calzada de los Arcos, cerca del centro de Querétaro.</p>
+
+                    <p><strong>Detalles:</strong></p>
+                    <ul>
+                        <li>Habitación amueblada ideal para unas vacaciones perfectas.</li><br>
+                        <li>Ubicación privilegiada para explorar todo lo que Querétaro tiene para ofrecer.</li><br>
+                        <li>Servicios incluidos: luz 💡, agua 🚿, internet 🌐.</li><br>
+                        <li>Espacios compartidos: cocina 🍴 y baño 🚽.</li><br>
+                    </ul>
+
+                    <h2>💸 <strong>Costo Especial para el Mes de Diciembre:</strong></h2>
+                    <ul>
+                        <li>$400 por noche para dos personas.</li>
+                        <li>$2000 por semana.</li><br>
+                    </ul>
+
+                    <h1>🗓️ <strong>¡Reserva ahora para el periodo del 1 de diciembre al 15 de enero y vive la temporada
+                            en
+                            Querétaro! ⏰</strong></h1><br>
+
+                    <!-- <p>📞 <strong>Contacta a:</strong></p>
+                <ul>
+                  <li>Lic. Juan Carlos Pérez Martínez: 449 268 6705</li>
+                  <li>Adm. Adriana Ayala Gutiérrez: 55 3308 7080 Pérez Martínez</li> -->
+                    </ul>
+
+                    <p>🎄 <strong>Crea recuerdos inolvidables en la Ciudad de Querétaro. ¡Tu escape decembrino te
+                            espera!</strong></p>
+
+                    </div>
+                    </div>
+
+                </section>
+
+                <!--Galeria html abilitacion______________________________________________________________________ -->
+
+                <section class="gallery" id="galeria">
+                    <div class="contenedor">
+                        <h2 class="subtitulo">Habitaciones</h2>
+                        <div class="contenedor-galeria">
+                            <a href="#footer">
+                                <img src="./img/recamara planta baja.jpg" class="img-galeria"
+                                    alt="recamara planta baja">
+
+                        </div>
+
+                        <!--disponibilidad VERDE Y ROJO Recamara planta baja:_____________________________________________________________________ -->
+
+                        <div id="estadoHabitacion" class="imagen-nombre disponibilidad-disponible"
+                            style="color: green;">
+                            Recamara planta baja<br> -DISPONIBLE !Reserva¡-</div>
+
+                        <!-- <div id="estadoHabitacion" class="imagen-nombre disponibilidad-disponible" style="color: RED;">Recamara planta baja:<br>NO DISPONIBLE</div> -->
+
+                        <!-- </a> -->
+
+                        <img src="./img/Planta Alta Juan Caballero y Osio.jpg" class="img-galeria"
+                            alt="Planta Alta Juan Caballero y Osio">
+                        <div class="texto-fondo-azul">
+
+                            <!-- disponibilidad VERDE Y ROJO Planta Alta Juan Caballero y Osio:______________________________________________________________________________ -->
+
+                            <div id="estadoHabitacion" class="imagen-nombre disponibilidad-disponible"
+                                style="color: green;">
+                                Planta Alta Juan Caballero y Osio<br> -DISPONIBLE !Reserva¡-</div>
+
+                            <!-- <div id="estadoHabitacion" class="imagen-nombre disponibilidad-disponible" style="color: RED;">Planta Alta Juan Caballero y Osio::<br>NO DISPONIBLE</div> -->
+
+                            </a>
+
+                            <!--Disponibilidad VERDE Y ROJO  Planta Alta Cochera_____________________________________________________________________________________________________________ -->
+                            <a href="#footer">
+                                <img src="./img//Plana Alta Cochera.jpg" class="img-galeria" alt="Planta Alta Cochera">
+
+                                <div id="estadoHabitacion" class="imagen-nombre disponibilidad-disponible"
+                                    style="color: green;">
+                                    Planta Alta Cochera<br> -DISPONIBLE !Reserva¡-</div>
+
+                                <!-- <div id="estadoHabitacion" class="imagen-nombre disponibilidad-disponible" style="color: RED;">Planta Alta Cochera:<br>NO DISPONIBLE</div>
+            -->
+
+                        </div>
+                        </a>
+
+                        <!-- Agrega más imágenes con el mismo patrón -->
+                    </div>
+                    </div>
+                </section>
+                <!-- Areas Comunes javascript 360__________________________________________________________________________________________________________________ -->
+                <section class="gallery" id="expertos">
+                    <div class="contenedor">
+                        <h2 class="subtitulo">Areas Comunes y de calle</h2>
+                        <div class="contenedor-galeria">
+
+                            <!-- Añade la biblioteca Pannellum -->
+                            <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+                            <link rel="stylesheet"
+                                href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+
+                            <!-- Panorama 0 Script para inicializar Pannellum para el primer panorama -->
+                            <div id="panorama0"></div>
+                            <script>
+                                pannellum.viewer('panorama0', {
+                                    "type": "equirectangular",
+                                    "panorama": "./img/Hall Principal.jpg", // Reemplaza con la ruta de tu segunda imagen 360
+                                    hfov: 300,
+                                });
+                            </script>
+
+                            <br>
+                            <div class="imagen-nombre">Hall</div>
+
+                            <!-- Panorama 1 Script para inicializar Pannellum para el primer panorama -->
+
+                            <div id="panorama1"></div>
+                            <script>
+                                pannellum.viewer('panorama1', {
+                                    "type": "equirectangular",
+                                    "panorama": "./img/Cosina.jpg",  // Reemplaza con la ruta de tu primera imagen 360
+
+                                });
+                            </script>
+                            <br>
+                            <div class="imagen-nombre">Cocina</div>
+
+                            <!-- Panorama 2 Script para inicializar Pannellum para el primer panorama -->
+                            <div id="panorama2"></div>
+
+                            <!-- Script para inicializar Pannellum para el segundo panorama -->
+                            <script>
+                                pannellum.viewer('panorama2', {
+                                    "type": "equirectangular",
+                                    "panorama": "./img/Vista_panoramica_de_la_calle.jpg",
+
+                                });
+                            </script>
+                            <br>
+                            <div class="imagen-nombre">Vista panoramica de la calle</div>
+
+
+
+
+
+                            <!-- Areas Comunes Cocina360__________________________________________________________________________________________________________________ -->
+
+
+                            <!-- Areas Comunes Cocina360__________________________________________________________________________________________________________________ -->
+
+
+
+                            <!-- Areas comunes fotos__________________________________________________________________________________________________________________ -->
+
+                            <!-- <img src="./img/Plana Alta Cochera.jpg" class="img-galeria" alt="Planta Alta Cochera">
+                    <div class="imagen-nombre">Planta Alta Cochera</div>
+                </div> -->
+                </section>
+            </section>
+        </main>
+
+        <!-- __________________________________________________________________________________________________________________ -->
+
+        <footer id="footer">
+            <div class="contenedor footer-content">
+                <div class="contact-us">
+                    <img src="./img/logo png-RECTANGULAR 900px.jpg" alt="RentHabitadLoft" class="brand-image">
+
+                </div>
+
+                <div class="social-media">
+                    <a href="https://www.facebook.com/people/Renta-de-Habitaciones-y-Lofts-en-Quer%25C3%25A9taro/61554283910425/"
+                        class="social-media-icon" target="_blank">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+                    <!-- <a href="https://www.youtube.com/channel/UClj_YDnrBmAOLirho9sX0WA" class="social-media-icon" target="_blank">
+                    <i class='bx bxl-youtube'></i>
+                </a>
+                <a href="https://github.com/celides" class="social-media-icon" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>  -->
+
+                    <a href="https://web.whatsapp.com/send?phone=525533087080" class="social-media-icon" target="_blank"
+                        rel="noopener noreferrer" title="Chatea con nosotros en WhatsApp web">
+                        <i class='bx bxl-whatsapp'></i>
+                    </a>
+
+                </div>
+
+                <!-- Address -->
+                <div class="cell-sm-6 cell-md-5 cell-lg-4 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="page-footer-minimal-inner">
+                        <h4>Dirección</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <dl class="list-desc">
+                                    <dt><span class="icon icon-sm mdi mdi-map-marker"></span></dt>
+                                    <dd>
+                                        <a class="link link-gray-darker"
+                                            href="https://www.google.com/maps?q=Av.+Real+100+Col.+Calesa+1ra+Sección"
+                                            target="_blank">
+                                            Real 100, Calesa, 76020 Santiago de Querétaro, Qro.
+
+                                        </a>
+                                    </dd>
+                                </dl>
+                            </li><br>
+                            <li>
+                                <dl class="list-desc">
+                                    <dt><span class="icon icon-sm mdi mdi-phone"></span></dt>
+                                    <dd class="text-gray-darker">
+                                        
+                                        <!-- !Reserva¡simplemente lo cambias de color a rojo___________________________________________________________________  -->
+                                        <h2 class="reserva-titulo">!Reserva¡</h2>
+                                        <!-- !Reserva¡___________________________________________________________________  -->
+                                        <h4>Contactanos:</h4>
+                                        <a href="https://wa.me/525533087080" target="_blank" rel="noopener noreferrer"
+                                            title="Chat with us on WhatsApp">
+                                            <img src="./img/whatsapp.ico" alt="WhatsApp Icon" class="whatsapp-icon">
+                                            <a class="link link-gray-darker" href="https://wa.me/525533087080">+52 (55)
+                                                3308 7080</a>
+                                        </a>
+                                    </dd>
+                                </dl>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+                <footer id="footerb">
+                    <!-- Otras secciones del footer -->
+                
+                    <div class="copyright">
+                        <p>&copy; 2023 ORP RentHabitadLoft - All Rights Reserved.</p>
+                    </div>
+                </footer>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script src="script.js"></script>
+<script src="botoninicio"></script>
+</body>
+
+=======
